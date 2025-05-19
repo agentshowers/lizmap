@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Define pin locations
     // Format: [latitude, longitude, name, videoFileName]
     const locations = [
-        [51.5074, -0.1278, "London West", "sample.mp4"], // London West
-        [51.5074, -0.0800, "London East", "sample.mp4"],  // London East
+        [51.5074, -0.1278, "London West", "cat.mp4"], // London West
+        [51.5074, -0.0800, "London East", "cat.mp4"],  // London East
         [40.7128, -74.0060, "New York", "cat.mp4"]     // New York
     ];
 
