@@ -10,16 +10,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Liz's Birthday Map</h1>
-    <div id="map"></div>
-    
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <video id="videoPlayer" controls>
-                <source id="videoSource" src="" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <!-- Birthday Cake Screen -->
+    <div id="cakeScreen" class="screen active">
+        <div class="cake-container">
+            <h1 class="birthday-text">Happy Birthday ❤️</h1>
+            <div class="cake-wrapper">
+                <div class="cake">
+                    <div class="cake-layer cake-bottom"></div>
+                    <div class="cake-layer cake-middle"></div>
+                    <div class="cake-layer cake-top"></div>
+                    <div class="candle-wrapper">
+                        <div class="candle" id="candle">
+                            <div class="candle-stick"></div>
+                            <div class="flame" id="flame"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="wish-text">Make a wish!</p>
+        </div>
+    </div>
+
+    <!-- Door Screen -->
+    <div id="doorScreen" class="screen">
+        <div class="door-container">
+            <h1 class="welcome-text">Welcome to the wonderful world of Oy</h1>
+            <div class="door-wrapper">
+                <div class="door" id="door">
+                    <div class="door-frame">
+                        <div class="door-panel">
+                            <div class="door-handle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Screen -->
+    <div id="mapScreen" class="screen">
+        <h1>Liz's Birthday Map</h1>
+        <div id="map"></div>
+        
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <video id="videoPlayer" controls>
+                    <source id="videoSource" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </div>
 
