@@ -1,26 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Screen transition functionality
     const cakeScreen = document.getElementById('cakeScreen');
-    const doorScreen = document.getElementById('doorScreen');
+    const balloonScreen = document.getElementById('balloonScreen');
     const mapScreen = document.getElementById('mapScreen');
     const candle = document.getElementById('candle');
-    const door = document.getElementById('door');
 
-    // Handle candle click - transition to door screen
+    // Handle candle click - transition to balloon arch screen
     candle.addEventListener('click', () => {
         cakeScreen.classList.remove('active');
         setTimeout(() => {
-            doorScreen.classList.add('active');
-        }, 300);
-    });
-
-    // Handle door click - transition to map screen
-    door.addEventListener('click', () => {
-        doorScreen.classList.remove('active');
-        setTimeout(() => {
-            mapScreen.classList.add('active');
-            // Initialize map after showing the screen
-            initializeMap();
+            balloonScreen.classList.add('active');
+            // Start automatic transition after walking animation completes
+            setTimeout(() => {
+                balloonScreen.classList.remove('active');
+                setTimeout(() => {
+                    mapScreen.classList.add('active');
+                    // Initialize map after showing the screen
+                    initializeMap();
+                }, 500);
+            }, 4500); // 4.5 seconds total (0.5s delay + 4s animation)
         }, 300);
     });
 

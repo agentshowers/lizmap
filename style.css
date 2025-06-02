@@ -155,69 +155,116 @@ body {
     60% { transform: translateY(-5px); }
 }
 
-/* Door Screen */
-#doorScreen {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+/* Balloon Arch Screen */
+#balloonScreen {
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #FFB6C1 100%);
+    overflow: hidden;
 }
 
-.door-container {
+.balloon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    position: relative;
+    width: 100%;
 }
 
 .welcome-text {
     font-size: 2.5rem;
-    color: #ecf0f1;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
     margin: 0;
     max-width: 80%;
     line-height: 1.2;
+    z-index: 10;
 }
 
-.door-wrapper {
-    perspective: 1200px;
-}
-
-.door {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.door:hover {
-    transform: scale(1.02);
-}
-
-.door-frame {
-    width: 150px;
-    height: 200px;
-    background: linear-gradient(45deg, #8B4513, #A0522D);
-    border-radius: 15px 15px 5px 5px;
-    padding: 10px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+.arch-wrapper {
     position: relative;
-}
-
-.door-panel {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #654321, #8B4513);
-    border-radius: 10px;
-    position: relative;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    height: 300px;
+    margin: 0 auto;
 }
 
-.door-handle {
+.balloon {
     position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    background: #FFD700;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    width: 40px;
+    height: 50px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1), 0 2px 10px rgba(0,0,0,0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 20px;
+    background: #666;
+}
+
+/* Left side balloons */
+.balloon-left-1 { background: #FF6B6B; left: 0px; top: 220px; animation-delay: 0s; }
+.balloon-left-2 { background: #4ECDC4; left: 10px; top: 170px; animation-delay: 0.5s; }
+.balloon-left-3 { background: #45B7D1; left: 25px; top: 120px; animation-delay: 1s; }
+.balloon-left-4 { background: #96CEB4; left: 45px; top: 80px; animation-delay: 1.5s; }
+.balloon-left-5 { background: #FFEAA7; left: 70px; top: 50px; animation-delay: 2s; }
+.balloon-left-6 { background: #FFB6C1; left: 100px; top: 30px; animation-delay: 2.5s; }
+
+/* Top balloon */
+.balloon-top-3 { background: #FFD93D; left: 130px; top: 10px; animation-delay: 5s; }
+
+/* Right side balloons */
+.balloon-right-1 { background: #BB6BD9; left: 160px; top: 30px; animation-delay: 1.3s; }
+.balloon-right-2 { background: #FF7675; left: 190px; top: 50px; animation-delay: 1.8s; }
+.balloon-right-3 { background: #74B9FF; left: 215px; top: 80px; animation-delay: 2.3s; }
+.balloon-right-4 { background: #00B894; left: 235px; top: 120px; animation-delay: 2.8s; }
+.balloon-right-5 { background: #FDCB6E; left: 250px; top: 170px; animation-delay: 3.3s; }
+.balloon-right-6 { background: #E17055; left: 260px; top: 220px; animation-delay: 3.8s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(-1deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.balloon-arch {
+    position: relative;
+    width: 292px;
+    height: 100%;
+    left: calc((100vw - 292px) / 2);
+    animation: zoomWalkThrough 4s ease-in-out 0.5s forwards;
+    transform-origin: center center;
+}
+
+@keyframes zoomWalkThrough {
+    0% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+    20% { 
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    60% { 
+        transform: scale(1.8);
+        opacity: 0.8;
+    }
+    90% { 
+        transform: scale(2.5);
+        opacity: 0.3;
+    }
+    100% { 
+        transform: scale(3.5);
+        opacity: 0;
+    }
+}
+
+.walking-effect {
+    display: none;
 }
 
 /* Map Screen */
@@ -299,19 +346,47 @@ body {
     
     .welcome-text {
         font-size: 1.8rem;
+        padding: 0 20px;
     }
     
     .cake {
         transform: scale(0.8);
     }
     
-    .door-frame {
-        width: 120px;
-        height: 160px;
+    .arch-wrapper {
+        height: 250px;
     }
     
     .wish-text {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .birthday-text {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-text {
+        font-size: 1.4rem;
+        padding: 0 20px;
+    }
+    
+    .cake {
+        transform: scale(0.7);
+    }
+    
+    .arch-wrapper {
+        height: 200px;
+    }
+    
+    .balloon {
+        width: 32px;
+        height: 40px;
+    }
+    
+    .wish-text {
+        font-size: 1rem;
     }
 }
 
