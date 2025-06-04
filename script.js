@@ -5,6 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const mapScreen = document.getElementById('mapScreen');
     const candle = document.getElementById('candle');
 
+    // Check URL parameters to determine which screen to show
+    const urlParams = new URLSearchParams(window.location.search);
+    const showCake = urlParams.has('liz');
+
+    if (!showCake) {
+        // Default: go directly to map
+        cakeScreen.classList.remove('active');
+        mapScreen.classList.add('active');
+        initializeMap();
+    }
+    // If showCake is true, keep the existing cake screen active (default HTML state)
+
     // Handle candle click - transition to balloon arch screen
     candle.addEventListener('click', () => {
         cakeScreen.classList.remove('active');
@@ -28,18 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.mapInitialized) return;
         window.mapInitialized = true;
 
-        // Initialize map centered on the Atlantic to show both London and New York
-        const map = L.map('map').setView([40, -20], 3);
+        const map = L.map('map').setView([51.5, -0.1], 10);
 
         // Add tile layer (OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            minZoom: 2,
             maxZoom: 19
         }).addTo(map);
 
         // Create a marker cluster group
         const markers = L.markerClusterGroup({
-            disableClusteringAtZoom: 12, // At zoom level 12 and beyond, clusters break apart
+            disableClusteringAtZoom: 8, // At zoom level 12 and beyond, clusters break apart
             spiderfyOnMaxZoom: true,
             showCoverageOnHover: true,
             zoomToBoundsOnClick: true
@@ -48,9 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Define pin locations
         // Format: [latitude, longitude, name, videoFileName]
         const locations = [
-            [51.5074, -0.1278, "London West", "cat.mp4"], // London West
-            [51.5074, -0.0800, "London East", "cat.mp4"],  // London East
-            [40.7128, -74.0060, "New York", "cat.mp4"]     // New York
+            [40.7128, -74.0060, "New York", "cat.mp4"],     // New York
+            [41.588, -8.428, "João Sr.", "joaosr.mp4"],    // Palmeira, Braga
+            [41.589, -8.429, "Pretinho", "pretinho.mp4"],  // Palmeira, Braga (offset)
+            [41.587, -8.429, "Júlia", "julia.mp4"],        // Palmeira, Braga (offset)
+            [41.588, -8.43, "Sagradinho", "sagradinho.mp4"], // Palmeira, Braga (offset)
+            [51.6341242, -0.076747, "Davy + Ilona", "davyilona.mp4"], // North London area
+            [51.54111, -0.15500, "Adam & Grace", "adamgrace.mp4"], // 24 Chalcot Square, London
+            [51.5299689, -0.0694819, "Jen & Jack", "jenjack.mp4"], // East London area
+            [31.44976, -9.7042, "Isla & Blossom", "islablossom.mp4"], // Atlantic Ocean area
+            [51.5280001, -0.0746846, "Natalia", "natalia.mp4"] // East London area
         ];
 
         // Create markers and add them to the cluster group
