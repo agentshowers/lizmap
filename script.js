@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         discoScreen.classList.remove('active');
         setTimeout(() => {
             cakeScreen.classList.add('active');
-        }, 500);
+        }, 1);
     }, 16000);
 
     // Handle candle click - transition to balloon arch screen

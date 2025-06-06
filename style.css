@@ -25,7 +25,7 @@ body {
 }
 
 /* Disco Screen */
-#discoScreen {
+.disco-background {
     background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #fb5607);
     background-size: 300% 300%;
     animation: discoBackground 2s ease infinite;
@@ -76,7 +76,7 @@ body {
 }
 
 .cat-dance {
-    width: 200px;
+    width: 400px;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
@@ -129,15 +129,12 @@ body {
 }
 
 /* Birthday Cake Screen */
-#cakeScreen {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
-}
 
 .cake-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .birthday-text {
@@ -202,7 +199,7 @@ body {
 .candle-wrapper {
     position: absolute;
     top: -30px;
-    left: 50%;
+    left: 50%; 
     transform: translateX(-50%);
     z-index: 3;
 }
@@ -247,9 +244,10 @@ body {
 
 .wish-text {
     font-size: 1.5rem;
-    color: #8e24aa;
+    color: #ffffff;
     margin: 0;
     font-style: italic;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
     animation: bounce 2s ease-in-out infinite;
 }
 
@@ -452,7 +450,7 @@ body {
     }
 
     .cat-dance {
-        width: 150px;
+        width: 300px;
     }
 
     .mute-button {
@@ -491,7 +489,7 @@ body {
     }
 
     .cat-dance {
-        width: 120px;
+        width: 240px;
     }
 
     .mute-button {

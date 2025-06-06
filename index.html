@@ -6,7 +6,7 @@
     <title>Liz's Birthday Map</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body >
     <!-- Background music -->
     <audio id="backgroundMusic" loop>
         <source src="monalisa.mp3" type="audio/mpeg">
@@ -27,23 +27,28 @@
     </div>
 
     <!-- Birthday Cake Screen -->
-    <div id="cakeScreen" class="screen">
-        <div class="cake-container">
-            <h1 class="birthday-text">Make a wish and blow (tap) the candle</h1>
-            <div class="cake-wrapper">
-                <div class="cake">
-                    <div class="cake-layer cake-bottom"></div>
-                    <div class="cake-layer cake-middle"></div>
-                    <div class="cake-layer cake-top"></div>
-                    <div class="candle-wrapper">
-                        <div class="candle" id="candle">
-                            <div class="candle-stick"></div>
-                            <div class="flame" id="flame"></div>
+    <div id="cakeScreen" class="screen disco-background">
+        <div class="disco-container">
+            <h1 class="disco-text">Make a wish!</h1>
+            <div class="cake-container">
+                <div class="cake-wrapper">
+                    <div class="cake">
+                        <div class="cake-layer cake-bottom"></div>
+                        <div class="cake-layer cake-middle"></div>
+                        <div class="cake-layer cake-top"></div>
+                        <div class="candle-wrapper">
+                            <div class="candle" id="candle">
+                                <div class="candle-stick"></div>
+                                <div class="flame" id="flame"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <p class="wish-text">Tap the candle when you're finished dancing</p>
             </div>
-            <p class="wish-text">Make a wish!</p>
+            <button id="muteButton" class="mute-button">
+                🔇 UNMUTE
+            </button>
         </div>
     </div>
 
