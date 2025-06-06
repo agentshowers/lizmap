@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.mapInitialized) return;
         window.mapInitialized = true;
 
-        const map = L.map('map').setView([51.5, -0.1], 10);
+        const map = L.map('map').setView([30, -40], 2);
 
         // Add tile layer (OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create a marker cluster group
         const markers = L.markerClusterGroup({
-            disableClusteringAtZoom: 8, // At zoom level 12 and beyond, clusters break apart
+            disableClusteringAtZoom: 6, // At zoom level 12 and beyond, clusters break apart
             spiderfyOnMaxZoom: true,
             showCoverageOnHover: true,
             zoomToBoundsOnClick: true
@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Format: [latitude, longitude, name, videoFileName]
         const locations = [
             [40.7128, -74.0060, "New York", "cat.mp4"],     // New York
-            [41.588, -8.428, "João Sr.", "joaosr.mp4"],    // Palmeira, Braga
-            [41.589, -8.429, "Pretinho", "pretinho.mp4"],  // Palmeira, Braga (offset)
-            [41.587, -8.429, "Júlia", "julia.mp4"],        // Palmeira, Braga (offset)
-            [41.588, -8.43, "Sagradinho", "sagradinho.mp4"], // Palmeira, Braga (offset)
+            [41.588, -8.425, "João Sr.", "joaosr.mp4"],    // Palmeira, Braga
+            [41.591, -8.429, "Pretinho", "pretinho.mp4"],  // Palmeira, Braga (offset)
+            [41.585, -8.429, "Júlia", "julia.mp4"],        // Palmeira, Braga (offset)
+            [41.588, -8.434, "Sagradinho", "sagradinho.mp4"], // Palmeira, Braga (offset)
             [51.6341242, -0.076747, "Davy + Ilona", "davyilona.mp4"], // North London area
             [51.54111, -0.15500, "Adam & Grace", "adamgrace.mp4"], // 24 Chalcot Square, London
             [51.5299689, -0.0694819, "Jen & Jack", "jenjack.mp4"], // East London area
@@ -75,7 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
             [30.333723, -87.14111, "Will, Anna & Ari", "willannaari.mp4"], // Pensacola Beach, Florida
             [35.787743, -78.644257, "Barbara", "barbara.mp4"], // Raleigh, North Carolina
             [25.059999, -77.345001, "Steven", "steven.mp4"], // Nassau, Bahamas
-            [33.3747907, -83.1944295, "Heather", "heather.mp4"] // Georgia area
+            [33.3747907, -83.1944295, "Heather", "heather.mp4"], // Georgia area
+            [-8.83, 13.23, "Ana Lúcia & Hélio", "analuciahelio.mp4"], // Luanda, Angola
+            [-8.85, 13.25, "Ana Lúcia & Friends", "analuciasurprise.mp4"], // Luanda, Angola (offset)
+            [41.582, -8.432, "Joana & Yassine", "joanayassine.mp4"] // Palmeira, Braga (offset)
         ];
 
         // Create markers and add them to the cluster group
