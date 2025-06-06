@@ -1,10 +1,7 @@
 # Video TODO List - Liz's Birthday Map
 
-- [x] Domain
 - [ ] Intro video
 - [ ] List view
-- [ ] URL param
-- [ ] Song
 
 ### Dan
 - [ ] Have video
@@ -27,7 +24,7 @@
 - [ ] Added video
 
 ### Kristy
-- [ ] Have video
+- [x] Have video
 - [ ] Have location
 - [ ] Added video
 

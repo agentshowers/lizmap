@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Screen references
     const discoScreen = document.getElementById('discoScreen');
     const cakeScreen = document.getElementById('cakeScreen');
-    const balloonScreen = document.getElementById('balloonScreen');
+    const videoScreen = document.getElementById('videoScreen');
     const candle = document.getElementById('candle');
     const backgroundMusic = document.getElementById('backgroundMusic');
     const muteButton = document.getElementById('muteButton');
+    const catVideo = document.getElementById('catVideo');
 
     // Start background music (with user interaction handling)
     function startBackgroundMusic() {
@@ -37,24 +38,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Transition from disco screen to cake screen after 5 seconds
+    // Transition from disco screen to cake screen after 16 seconds
     setTimeout(() => {
         discoScreen.classList.remove('active');
         setTimeout(() => {
             cakeScreen.classList.add('active');
         }, 1);
-    }, 16000);
+    }, 10000);
 
-    // Handle candle click - transition to balloon arch screen
+    // Handle candle click - transition to video screen
     candle.addEventListener('click', () => {
+        // Stop the background music
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+        
+        // Hide mute button during video
+        muteButton.style.display = 'none';
+        
         cakeScreen.classList.remove('active');
         setTimeout(() => {
-            balloonScreen.classList.add('active');
-            // Start automatic transition after walking animation completes
-            setTimeout(() => {
-                // Navigate to the map page
-                window.location.href = '/map.html';
-            }, 4500); // 4.5 seconds total (0.5s delay + 4s animation)
-        }, 300);
+            videoScreen.classList.add('active');
+            // Play the cat video
+            catVideo.play();
+        }, 100);
+    });
+
+    // Handle video end - navigate to map
+    catVideo.addEventListener('ended', () => {
+        window.location.href = '/map.html';
     });
 }); 

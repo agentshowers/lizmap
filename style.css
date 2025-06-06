@@ -257,6 +257,26 @@ body {
     60% { transform: translateY(-5px); }
 }
 
+/* Video Screen */
+#videoScreen {
+    background: #000;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+#catVideo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
 /* Balloon Arch Screen */
 #balloonScreen {
     background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #FFB6C1 100%);
