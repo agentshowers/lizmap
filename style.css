@@ -461,6 +461,20 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Move content higher up on mobile */
+    .screen {
+        align-items: flex-start;
+        padding-top: 15vh;
+    }
+    
+    #videoScreen {
+        padding-top: 10vh;
+    }
+    
+    .disco-container {
+        gap: 30px;
+    }
+    
     .disco-text {
         font-size: 2.2rem;
         padding: 0 20px;
@@ -500,6 +514,20 @@ body {
 }
 
 @media (max-width: 480px) {
+    /* Move content even higher on smaller mobile screens */
+    .screen {
+        align-items: flex-start;
+        padding-top: 12vh;
+    }
+    
+    #videoScreen {
+        padding-top: 8vh;
+    }
+    
+    .disco-container {
+        gap: 20px;
+    }
+    
     .disco-text {
         font-size: 1.8rem;
         padding: 0 30px;

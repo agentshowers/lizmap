@@ -139,22 +139,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .close-button {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            right: 15px;
-            top: 10px;
-        }
 
-        .close-button:hover,
-        .close-button:focus {
-            color: #000;
-            text-decoration: none;
-        }
 
         #videoPlayer {
             width: 100%;
@@ -182,7 +167,6 @@
 
     <div id="videoModal" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
             <video id="videoPlayer" controls>
                 <source id="videoSource" src="" type="video/mp4">
                 Your browser does not support the video tag.
@@ -213,7 +197,7 @@
 
             // Create a marker cluster group
             const markers = L.markerClusterGroup({
-                disableClusteringAtZoom: 6,
+                disableClusteringAtZoom: 2,
                 spiderfyOnMaxZoom: true,
                 showCoverageOnHover: true,
                 zoomToBoundsOnClick: true
@@ -246,7 +230,7 @@
                 [51.536388, -0.140556, "Kristy", "kristy.mp4"],
                 [40.650002, -73.949997, "Sheldon", "sheldon.mp4"],
                 [35.787743, -78.644257, "Huong", "huong.mp4"],
-                [51.536388, -0.140556, "Sandy Boi", "sandyboi.mp4"],
+                [51.531257, -0.069943, "Sandy Boi", "sandyboi.mp4"],
                 [38.991673, -94.633568, "Alex", "alex.mp4"],
                 [41.505493, -81.681290, "Elena", "elena.mp4"],
                 [35.782169, -80.793457, "Brittany", "brittany.mp4"],
@@ -271,7 +255,6 @@
 
             // Modal functionality
             const modal = document.getElementById('videoModal');
-            const closeButton = document.querySelector('.close-button');
             const videoPlayer = document.getElementById('videoPlayer');
             const videoSource = document.getElementById('videoSource');
 
@@ -290,8 +273,7 @@
                 videoPlayer.currentTime = 0;
             }
 
-            // Close the modal when clicking the close button
-            closeButton.addEventListener('click', closeVideoModal);
+
 
             // Close the modal when clicking outside the modal content
             window.addEventListener('click', (event) => {
