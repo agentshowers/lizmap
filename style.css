@@ -259,7 +259,6 @@ body {
 
 /* Video Screen */
 #videoScreen {
-    background: #000;
     justify-content: center;
     align-items: center;
 }
