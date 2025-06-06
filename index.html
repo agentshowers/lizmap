@@ -7,10 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Background music -->
+    <audio id="backgroundMusic" loop>
+        <source src="monalisa.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Initial Disco Screen -->
+    <div id="discoScreen" class="screen active disco-background">
+        <div class="disco-container">
+            <h1 class="disco-text">Happy Birthday you sexy Mona Lisa</h1>
+            <div class="cat-container">
+                <img src="catdance.gif" alt="Dancing Cat" class="cat-dance">
+            </div>
+            <button id="muteButton" class="mute-button">
+                🔇 UNMUTE
+            </button>
+        </div>
+    </div>
+
     <!-- Birthday Cake Screen -->
-    <div id="cakeScreen" class="screen active">
+    <div id="cakeScreen" class="screen">
         <div class="cake-container">
-            <h1 class="birthday-text">Happy Birthday ❤️</h1>
+            <h1 class="birthday-text">Make a wish and blow (tap) the candle</h1>
             <div class="cake-wrapper">
                 <div class="cake">
                     <div class="cake-layer cake-bottom"></div>

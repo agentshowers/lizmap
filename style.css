@@ -24,6 +24,110 @@ body {
     display: flex;
 }
 
+/* Disco Screen */
+#discoScreen {
+    background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #fb5607);
+    background-size: 300% 300%;
+    animation: discoBackground 2s ease infinite;
+}
+
+@keyframes discoBackground {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
+.disco-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    z-index: 2;
+}
+
+.disco-text {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 0 20px #ff006e, 0 0 40px #8338ec, 0 0 60px #3a86ff;
+    margin: 0;
+    animation: discoText 1s ease-in-out infinite alternate;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+}
+
+@keyframes discoText {
+    0% { 
+        transform: scale(1);
+        text-shadow: 0 0 20px #ff006e, 0 0 40px #8338ec, 0 0 60px #3a86ff;
+    }
+    100% { 
+        transform: scale(1.1);
+        text-shadow: 0 0 30px #06ffa5, 0 0 50px #ffbe0b, 0 0 70px #fb5607;
+    }
+}
+
+.cat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat-dance {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    animation: catBounce 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes catBounce {
+    0% { transform: scale(1) rotate(-2deg); }
+    100% { transform: scale(1.05) rotate(2deg); }
+}
+
+.mute-button {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: buttonGlow 2s ease-in-out infinite alternate;
+    z-index: 1000;
+}
+
+.mute-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.mute-button:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+@keyframes buttonGlow {
+    0% { 
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+    100% { 
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    }
+}
+
 /* Birthday Cake Screen */
 #cakeScreen {
     background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
@@ -340,6 +444,22 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .disco-text {
+        font-size: 2.2rem;
+        padding: 0 20px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .cat-dance {
+        width: 150px;
+    }
+
+    .mute-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
     .birthday-text {
         font-size: 2rem;
     }
@@ -363,6 +483,22 @@ body {
 }
 
 @media (max-width: 480px) {
+    .disco-text {
+        font-size: 1.8rem;
+        padding: 0 30px;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .cat-dance {
+        width: 120px;
+    }
+
+    .mute-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
     .birthday-text {
         font-size: 1.5rem;
     }
