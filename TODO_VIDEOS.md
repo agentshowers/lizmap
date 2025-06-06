@@ -3,21 +3,6 @@
 - [ ] Intro video
 - [ ] List view
 
-### Dan
-- [ ] Have video
-- [ ] Have location
-- [ ] Added video
-
-### Bruce
-- [ ] Have video
-- [ ] Have location
-- [ ] Added video
-
-### Heather 2
-- [ ] Have video
-- [ ] Have location
-- [ ] Added video
-
 ### Abi
 - [ ] Have video
 - [ ] Have location
@@ -25,20 +10,15 @@
 
 ### Kristy
 - [x] Have video
-- [ ] Have location
+- [x] Have location (Camden Town London)
 - [ ] Added video
 
 ### Ninh
-- [ ] Have video
-- [ ] Have location
+- [x] Have video
+- [x] Have location (New York)
 - [ ] Added video
 
 ### Drew
-- [ ] Have video
-- [ ] Have location
-- [ ] Added video
-
-### Shahana
 - [ ] Have video
 - [ ] Have location
 - [ ] Added video
@@ -67,7 +47,7 @@
 
 ### Sanderson
 - [x] Have video
-- [x] Have location
+- [x] Have location (241 Hackney Road London)
 - [ ] Added video
 - [ ] Subtitles
 
@@ -83,5 +63,5 @@
 
 ### Brittany
 - [x] Have video
-- [ ] Have location (Raleigh NC)
+- [x] Have location (North Carolina)
 - [ ] Added video 
