@@ -221,7 +221,6 @@
 
             // Define pin locations
             const locations = [
-                [40.7128, -74.0060, "New York", "cat.mp4"],
                 [41.588, -8.425, "João Sr.", "joaosr.mp4"],
                 [41.591, -8.429, "Pretinho", "pretinho.mp4"],
                 [41.585, -8.429, "Júlia", "julia.mp4"],
@@ -247,7 +246,7 @@
                 [51.536388, -0.140556, "Kristy", "kristy.mp4"],
                 [40.650002, -73.949997, "Sheldon", "sheldon.mp4"],
                 [35.787743, -78.644257, "Huong", "huong.mp4"],
-                [51.536388, -0.140556, "Sanderson", "sanderson.mp4"],
+                [51.536388, -0.140556, "Sandy Boi", "sandyboi.mp4"],
                 [38.991673, -94.633568, "Alex", "alex.mp4"],
                 [41.505493, -81.681290, "Elena", "elena.mp4"],
                 [35.782169, -80.793457, "Brittany", "brittany.mp4"],
@@ -281,6 +280,8 @@
                 videoPlayer.load();
                 modal.style.display = 'block';
                 videoPlayer.play();
+                // Close any open popups
+                map.closePopup();
             }
 
             function closeVideoModal() {

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             cakeScreen.classList.add('active');
         }, 1);
-    }, 10000);
+    }, 6000);
 
     // Start the music immediately
     startBackgroundMusic();
