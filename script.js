@@ -18,9 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Start the music immediately
-    startBackgroundMusic();
-
     // Mute/unmute functionality - start muted
     let isMuted = true;
     backgroundMusic.muted = true;
@@ -45,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
             cakeScreen.classList.add('active');
         }, 1);
     }, 10000);
+
+    // Start the music immediately
+    startBackgroundMusic();
 
     // Handle candle click - transition to video screen
     candle.addEventListener('click', () => {
