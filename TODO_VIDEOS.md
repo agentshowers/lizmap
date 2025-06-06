@@ -1,5 +1,9 @@
 # Video TODO List - Liz's Birthday Map
 
+- [ ] Domain
+- [ ] Intro video
+- [ ] List view
+
 ### Dan
 - [ ] Have video
 - [ ] Have location
@@ -12,16 +16,6 @@
 
 ### Heather 2
 - [ ] Have video
-- [ ] Have location
-- [ ] Added video
-
-### Souvik
-- [x] Have video
-- [ ] Have location
-- [ ] Added video
-
-### Lily
-- [x] Have video
 - [ ] Have location
 - [ ] Added video
 
@@ -40,11 +34,6 @@
 - [ ] Have location
 - [ ] Added video
 
-### Lauren
-- [x] Have video
-- [ ] Have location
-- [ ] Added video
-
 ### Drew
 - [ ] Have video
 - [ ] Have location
@@ -57,12 +46,12 @@
 
 ### Sheldon
 - [x] Have video
-- [ ] Have location
+- [x] Have location (Brooklyn)
 - [ ] Added video
 
 ### Huong
 - [x] Have video
-- [ ] Have location
+- [x] Have location (Raleigh NC)
 - [ ] Added video
 
 ### Dad
@@ -78,21 +67,22 @@
 - [ ] Subtitles
 
 ### Sanderson
-- [ ] Have video
-- [ ] Have location
+- [x] Have video
+- [x] Have location
 - [ ] Added video
+- [ ] Subtitles
 
 ### Alex
 - [x] Have video
-- [ ] Have location
+- [x] Have location (Prairie Village, Kansas, USA)
 - [ ] Added video
 
 ### Elena
 - [x] Have video
-- [ ] Have location
+- [x] Have location (Cleveland)
 - [ ] Added video
 
 ### Brittany
 - [x] Have video
-- [ ] Have location
+- [ ] Have location (Raleigh NC)
 - [ ] Added video 

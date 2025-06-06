@@ -78,7 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
             [33.3747907, -83.1944295, "Heather", "heather.mp4"], // Georgia area
             [-8.83, 13.23, "Ana Lúcia & Hélio", "analuciahelio.mp4"], // Luanda, Angola
             [-8.85, 13.25, "Ana Lúcia & Friends", "analuciasurprise.mp4"], // Luanda, Angola (offset)
-            [41.582, -8.432, "Joana & Yassine", "joanayassine.mp4"] // Palmeira, Braga (offset)
+            [41.582, -8.432, "Joana & Yassine", "joanayassine.mp4"], // Palmeira, Braga (offset)
+            [51.376495, -0.100594, "Lily & Victoria", "lilyvictoria.mp4"], // Croydon, England
+            [51.5158, -0.0317, "Souvik", "souvik.mp4"], // Limehouse, London
+            [40.652002, -73.951997, "Lauren", "lauren.mp4"] // Brooklyn, New York (offset)
         ];
 
         // Create markers and add them to the cluster group
