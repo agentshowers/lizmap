@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liz's Birthday Map</title>
+    <title>The Land of (m)Oy</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
@@ -22,7 +22,96 @@
 
         #map {
             width: 100%;
-            height: calc(100vh - 80px);
+            height: calc(100vh - 140px);
+        }
+
+        /* View Container */
+        .view-container {
+            position: relative;
+            height: calc(100vh - 140px);
+        }
+
+        /* Toggle Buttons */
+        .view-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            display: flex;
+            z-index: 1000;
+        }
+
+        .toggle-btn {
+            padding: 10px 20px;
+            border: none;
+            background: transparent;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .toggle-btn.active {
+            background: #007bff;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+        }
+
+        .toggle-btn:hover {
+            color: #007bff;
+        }
+
+        .toggle-btn.active:hover {
+            color: white;
+        }
+
+        /* List View */
+        #listView {
+            width: 100%;
+            height: 100%;
+            background: #f8f9fa;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .video-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: #f8f9ff;
+        }
+
+        .video-item:active {
+            transform: translateX(3px);
+        }
+
+        .video-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
         }
 
         /* Modal styles */
@@ -75,8 +164,21 @@
     </style>
 </head>
 <body>
-    <h1>Liz's Birthday Map</h1>
-    <div id="map"></div>
+    <h1>The Land of (m)Oy</h1>
+    
+    <div class="view-container">
+        <div id="map"></div>
+        <div id="listView">
+            <div class="video-list" id="videoList">
+                <!-- Video items will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="view-toggle">
+        <button class="toggle-btn active" id="mapBtn">🗺️ Map</button>
+        <button class="toggle-btn" id="listBtn">📋 List</button>
+    </div>
 
     <div id="videoModal" class="modal">
         <div class="modal-content">
@@ -92,6 +194,13 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // View toggle elements
+            const mapView = document.getElementById('map');
+            const listView = document.getElementById('listView');
+            const mapBtn = document.getElementById('mapBtn');
+            const listBtn = document.getElementById('listBtn');
+            const videoList = document.getElementById('videoList');
+
             // Initialize map immediately
             const map = L.map('map').setView([30, -40], 2);
 
@@ -187,6 +296,53 @@
                     closeVideoModal();
                 }
             });
+
+            // View toggle functionality
+            function showMapView() {
+                mapView.style.display = 'block';
+                listView.style.display = 'none';
+                mapBtn.classList.add('active');
+                listBtn.classList.remove('active');
+                // Trigger map resize to ensure proper rendering
+                setTimeout(() => map.invalidateSize(), 100);
+            }
+
+            function showListView() {
+                mapView.style.display = 'none';
+                listView.style.display = 'block';
+                mapBtn.classList.remove('active');
+                listBtn.classList.add('active');
+            }
+
+            // Toggle button event listeners
+            mapBtn.addEventListener('click', showMapView);
+            listBtn.addEventListener('click', showListView);
+
+            // Populate list view
+            function populateListView() {
+                videoList.innerHTML = '';
+                
+                // Sort locations alphabetically by name (index 2)
+                const sortedLocations = [...locations].sort((a, b) => 
+                    a[2].localeCompare(b[2])
+                );
+                
+                sortedLocations.forEach(location => {
+                    const videoItem = document.createElement('div');
+                    videoItem.className = 'video-item';
+                    videoItem.innerHTML = `<h3 class="video-name">${location[2]}</h3>`;
+                    
+                    // Add click event to play video
+                    videoItem.addEventListener('click', () => {
+                        openVideoModal("videos/" + location[3]);
+                    });
+                    
+                    videoList.appendChild(videoItem);
+                });
+            }
+
+            // Initialize list view
+            populateListView();
         });
     </script>
 </body>
