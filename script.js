@@ -69,7 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
             [51.54111, -0.15500, "Adam & Grace", "adamgrace.mp4"], // 24 Chalcot Square, London
             [51.5299689, -0.0694819, "Jen & Jack", "jenjack.mp4"], // East London area
             [31.44976, -9.7042, "Isla & Blossom", "islablossom.mp4"], // Atlantic Ocean area
-            [51.5280001, -0.0746846, "Natalia", "natalia.mp4"] // East London area
+            [51.5280001, -0.0746846, "Natalia", "natalia.mp4"], // East London area
+            [34.20705, -84.140343, "Tom & Phyllis", "tomphyllis.mp4"], // Cumming, Georgia
+            [40.650002, -73.949997, "Jordan", "jordan.mp4"], // Brooklyn, New York
+            [30.333723, -87.14111, "Will, Anna & Ari", "willannaari.mp4"], // Pensacola Beach, Florida
+            [35.787743, -78.644257, "Barbara", "barbara.mp4"], // Raleigh, North Carolina
+            [25.059999, -77.345001, "Steven", "steven.mp4"], // Nassau, Bahamas
+            [33.3747907, -83.1944295, "Heather", "heather.mp4"] // Georgia area
         ];
 
         // Create markers and add them to the cluster group
