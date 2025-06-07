@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoScreen = document.getElementById('videoScreen');
     const candle = document.getElementById('candle');
     const backgroundMusic = document.getElementById('backgroundMusic');
-    const muteButton = document.getElementById('muteButton');
+    const discoMuteButton = document.getElementById('discoMuteButton');
+    const cakeMuteButton = document.getElementById('cakeMuteButton');
     const catVideo = document.getElementById('catVideo');
 
     // Start background music (with user interaction handling)
@@ -21,19 +22,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mute/unmute functionality - start muted
     let isMuted = true;
     backgroundMusic.muted = true;
-    muteButton.textContent = '🔇 UNMUTE';
     
-    muteButton.addEventListener('click', () => {
+    // Function to update both button texts
+    function updateMuteButtons() {
+        const text = isMuted ? '🔇 UNMUTE' : '🔊 MUTE';
+        discoMuteButton.textContent = text;
+        cakeMuteButton.textContent = text;
+    }
+    
+    // Function to toggle mute state
+    function toggleMute() {
         if (isMuted) {
             backgroundMusic.muted = false;
-            muteButton.textContent = '🔊 MUTE';
             isMuted = false;
         } else {
             backgroundMusic.muted = true;
-            muteButton.textContent = '🔇 UNMUTE';
             isMuted = true;
         }
-    });
+        updateMuteButtons();
+    }
+    
+    // Initialize button texts
+    updateMuteButtons();
+    
+    // Add event listeners to both buttons
+    discoMuteButton.addEventListener('click', toggleMute);
+    cakeMuteButton.addEventListener('click', toggleMute);
 
     // Transition from disco screen to cake screen after 16 seconds
     setTimeout(() => {
@@ -52,8 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
         backgroundMusic.pause();
         backgroundMusic.currentTime = 0;
         
-        // Hide mute button during video
-        muteButton.style.display = 'none';
+        // Hide mute buttons during video
+        discoMuteButton.style.display = 'none';
+        cakeMuteButton.style.display = 'none';
         
         cakeScreen.classList.remove('active');
         setTimeout(() => {
